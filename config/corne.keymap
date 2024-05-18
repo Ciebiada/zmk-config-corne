@@ -29,7 +29,7 @@
                 };
         };
         behaviors {
-                // Those are used to keep RALT on the default layer however if you use arrows with it it will act as CMD
+                // Those are used to keep RALT on the default layer but act as CMD when used with arrows
                 left: left_arrow {
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
