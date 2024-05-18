@@ -28,6 +28,33 @@
                         ;
                 };
         };
+        behaviors {
+                // Those are used to keep RALT on the default layer however if you use arrows with it it will act as CMD
+                left: left_arrow {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp LEFT>, <&kp LG(LEFT)>;
+                        mods = <(MOD_RALT)>;
+                };
+                right: right_arrow {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp RIGHT>, <&kp LG(RIGHT)>;
+                        mods = <(MOD_RALT)>;
+                };
+                up: up_arrow {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp UP>, <&kp LG(UP)>;
+                        mods = <(MOD_RALT)>;
+                };
+                down: down_arrow {
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp DOWN>, <&kp LG(DOWN)>;
+                        mods = <(MOD_RALT)>;
+                };
+        };
         keymap {
                 compatible = "zmk,keymap";
 
@@ -40,26 +67,26 @@
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &kp LSHFT     &kp Z        &kp X          &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp RSHFT
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &kp LGUI      &mo 3         &kp SPACE         &kp RET       &mo 2         &mo 1
+                                                &kp LGUI      &mo 1         &kp SPACE         &kp RET       &mo 2         &kp RALT
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
 
-                accent_layer {
+                navigation_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &trans        &kp Q         &kp W         &kp RA(E)     &kp R         &kp T             &kp Y         &kp U         &kp RA(I)     &kp RA(O)     &kp P         &trans
+      &trans        &trans       &trans         &up           &trans        &trans            &trans        &trans        &trans        &trans        &trans        &kp LA(BSPC)
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &kp RA(A)     &kp RA(S)     &kp D         &kp F         &kp G             &kp H         &kp J         &kp K         &kp RA(L)     &kp SEMI      &trans
+      &trans        &trans       &left          &down         &right        &trans            &trans        &trans        &trans        &trans        &trans        &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &kp RA(Z)     &kp RA(X)     &kp RA(C)     &kp V         &kp B             &kp RA(N)     &kp M         &kp COMMA     &kp DOT       &kp FSLH      &trans
+      &trans        &trans       &trans         &kp C_VOL_DN  &kp C_VOL_UP  &trans            &trans        &trans        &trans        &trans        &trans        &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &kp LGUI      &lm 3 LGUI    &kp SPACE         &none         &none         &none
+                                                &none         &none         &none             &kp LG(SPACE) &mo 3         &kp LGUI
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
 
-                raise_layer {
+                symbol_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       &trans        &kp EXCL     &kp AT         &kp HASH      &kp DLLR      &kp LBKT          &kp RBKT      &kp N7        &kp N8        &kp N9        &kp PIPE      &trans
@@ -68,21 +95,21 @@
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &kp GRAVE     &kp PRCNT    &kp CARET      &kp AMPS      &kp UNDER     &kp LBRC          &kp RBRC      &kp N1        &kp N2        &kp N3        &kp BSLH      &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &trans        &lm 3 RALT    &trans            &none         &none         &none
+                                                &trans        &mo 3         &trans            &none         &none         &none
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
 
-                lower_layer {
+                extra_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &trans        &trans       &trans         &kp UP        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &kp LA(BSPC)
+      &trans        &trans       &trans         &kp LA(UP)    &trans        &trans            &trans        &trans        &trans        &trans        &trans        &kp LA(BSPC)
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &trans       &kp LEFT       &kp DOWN      &kp RIGHT     &trans            &trans        &trans        &trans        &trans        &trans        &trans
+      &trans        &trans       &kp LA(LEFT)   &kp LA(DOWN)  &kp LA(RIGHT) &trans            &trans        &trans        &trans        &trans        &trans        &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &trans       &trans         &kp C_VOL_DN  &kp C_VOL_UP  &trans            &trans        &trans        &trans        &trans        &trans        &trans
+      &trans        &trans       &trans         &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &none         &none         &none             &kp LG(SPACE) &kp RALT      &kp LGUI
+                                                &none         &none         &none             &none         &none         &none
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
