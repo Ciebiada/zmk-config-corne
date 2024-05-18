@@ -11,7 +11,6 @@
 #define NAV 1
 #define SYM 2
 #define EXTRA 3
-#define ALTAB 4
 
 / {
         macros {
@@ -31,28 +30,6 @@
                                 , <&macro_param_1to1>
                                 , <&macro_release &mo MACRO_PLACEHOLDER>
                                 ;
-                };
-
-                altab: alt_tab_enter {
-                        label = "alt_tab_enter";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <10>;
-                        tap-ms = <20>;
-                        bindings =
-                                <&macro_press &kp LCTRL>,
-                                <&macro_tap &kp TAB &to ALTAB>;
-                };
-
-                altab_x: alt_tab_leave {
-                        label = "alt_tab_leave";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <10>;
-                        tap-ms = <20>;
-                        bindings =
-                                <&macro_release &kp LCTRL>,
-                                <&macro_tap &to 0>;
                 };
         };
 
@@ -107,7 +84,7 @@
                 navigation_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &altab        &trans       &trans         &up           &trans        &trans            &trans        &trans        &trans        &trans        &trans        &kp LA(BSPC)
+      &trans        &trans       &trans         &up           &trans        &trans            &trans        &trans        &trans        &trans        &trans        &kp LA(BSPC)
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &trans        &trans       &left          &down         &right        &trans            &trans        &trans        &trans        &trans        &trans        &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
@@ -121,7 +98,7 @@
                 symbol_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &altab        &kp EXCL     &kp AT         &kp HASH      &kp DLLR      &kp LBKT          &kp RBKT      &kp N7        &kp N8        &kp N9        &kp PIPE      &trans
+      &trans        &kp EXCL     &kp AT         &kp HASH      &kp DLLR      &kp LBKT          &kp RBKT      &kp N7        &kp N8        &kp N9        &kp PIPE      &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &kp TILDE     &kp ASTRK    &kp PLUS       &kp MINUS     &kp EQUAL     &kp LPAR          &kp RPAR      &kp N4        &kp N5        &kp N6        &kp N0        &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
@@ -142,20 +119,6 @@
       &trans        &trans       &trans         &trans        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
                                                 &none         &none         &none             &none         &none         &none
-//                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-                        >;
-                };
-
-                altab_layer {
-                        bindings = <
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &altab_x      &altab_x      &altab_x      &altab_x      &altab_x      &altab_x          &altab_x      &altab_x      &altab_x      &altab_x      &altab_x      &altab_x
-// ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &altab_x      &altab_x      &altab_x      &altab_x      &altab_x      &altab_x          &altab_x      &altab_x      &altab_x      &altab_x      &altab_x      &altab_x
-// ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &altab_x      &altab_x      &altab_x      &altab_x      &altab_x      &altab_x          &altab_x      &altab_x      &altab_x      &altab_x      &altab_x      &altab_x
-// ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &altab_x      &altab_x      &altab_x          &altab_x      &altab_x      &altab_x
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
