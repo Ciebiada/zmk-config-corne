@@ -10,16 +10,13 @@
 
 #define SYM 1
 
-#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2) \
-    ZMK_MOD_MORPH(NAME, \
-        mods = <(MOD)>; \
-        bindings = <BINDING1>, <BINDING2>; \
-    )
-
-SIMPLE_MORPH(D_LEFT, MOD_LALT, &kp D, &kp LEFT)
-SIMPLE_MORPH(F_RIGHT, MOD_LALT, &kp F, &kp RIGHT)
-SIMPLE_MORPH(E_UP, MOD_LALT, &kp E, &kp UP)
-SIMPLE_MORPH(V_DOWN, MOD_LALT, &kp V, &kp DOWN)
+#define MORPH(NAME, MOD, BINDING1, BINDING2) \
+        NAME: NAME { \
+                compatible = "zmk,behavior-mod-morph"; \
+                #binding-cells = <0>; \
+                bindings = <BINDING1>, <BINDING2>; \
+                mods = <(MOD)>; \
+        };
 
 / {
         macros {
@@ -43,33 +40,10 @@ SIMPLE_MORPH(V_DOWN, MOD_LALT, &kp V, &kp DOWN)
         };
 
         behaviors {
-                // D_l: left_arrow {
-                //         compatible = "zmk,behavior-mod-morph";
-                //         #binding-cells = <0>;
-                //         bindings = <&kp D>, <&kp LG(LEFT)>;
-                //         mods = <(MOD_LALT)>;
-                // };
-
-                // F_r: right_arrow {
-                //         compatible = "zmk,behavior-mod-morph";
-                //         #binding-cells = <0>;
-                //         bindings = <&kp F>, <&kp LG(RIGHT)>;
-                //         mods = <(MOD_LALT)>;
-                // };
-
-                // E_u: up_arrow {
-                //         compatible = "zmk,behavior-mod-morph";
-                //         #binding-cells = <0>;
-                //         bindings = <&kp E>, <&kp LG(UP)>;
-                //         mods = <(MOD_LALT)>;
-                // };
-
-                // V_d: down_arrow {
-                //         compatible = "zmk,behavior-mod-morph";
-                //         #binding-cells = <0>;
-                //         bindings = <&kp V>, <&kp LG(DOWN)>;
-                //         mods = <(MOD_LALT)>;
-                // };
+                MORPH(D_LEFT, MOD_LALT, &kp D, &kp LEFT)
+                MORPH(F_RIGHT, MOD_LALT, &kp F, &kp RIGHT)
+                MORPH(E_UP, MOD_LALT, &kp E, &kp UP)
+                MORPH(V_DOWN, MOD_LALT, &kp V, &kp DOWN)
         };
 
         keymap {
