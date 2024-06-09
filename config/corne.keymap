@@ -44,6 +44,17 @@
                 MORPH(F_RIGHT, MOD_LALT, &kp F, &kp RIGHT)
                 MORPH(E_UP, MOD_LALT, &kp E, &kp UP)
                 MORPH(V_DOWN, MOD_LALT, &kp V, &kp DOWN)
+
+                MORPH(M_N1, MOD_RGUI, &kp M, &kp N1)
+                MORPH(COMMA_N2, MOD_RGUI, &kp COMMA, &kp N2)
+                MORPH(DOT_N3, MOD_RGUI, &kp DOT, &kp N3)
+                MORPH(J_N4, MOD_RGUI, &kp J, &kp N4)
+                MORPH(K_N5, MOD_RGUI, &kp K, &kp N5)
+                MORPH(L_N6, MOD_RGUI, &kp L, &kp N6)
+                MORPH(U_N7, MOD_RGUI, &kp U, &kp N7)
+                MORPH(I_N8, MOD_RGUI, &kp I, &kp N8)
+                MORPH(O_N9, MOD_RGUI, &kp O, &kp N9)
+                MORPH(SEMI_N0, MOD_RGUI, &kp SEMI, &kp N0)
         };
 
         keymap {
@@ -52,11 +63,11 @@
                 default_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &kp TAB       &kp Q         &kp W         &E_UP         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &kp BSPC
+      &kp TAB       &kp Q         &kp W         &E_UP         &kp R         &kp T             &kp Y         &kp U_N7      &kp I_N8      &kp O_N9      &kp P         &kp BSPC
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &mt LCTRL ESC &kp A         &kp S         &D_LEFT       &F_RIGHT      &kp G             &kp H         &kp J         &kp K         &kp L         &kp SEMI      &kp RET
+      &mt LCTRL ESC &kp A         &kp S         &D_LEFT       &F_RIGHT      &kp G             &kp H         &kp J_N4      &kp K_N5      &kp L_N6      &kp SEMI_N0   &kp RET
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &kp LSHFT     &kp Z         &kp X         &kp C         &V_DOWN       &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp RSHFT
+      &kp LSHFT     &kp Z         &kp X         &kp C         &V_DOWN       &kp B             &kp N         &kp M_N1      &kp COMMA_N2  &kp DOT_N3    &kp FSLH      &kp RSHFT
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
                                                 &kp LALT      &kp SPACE     &kp LGUI          &kp RGUI      &mo SYM       &kp RALT
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
@@ -66,13 +77,13 @@
                 symbol_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &trans        &kp TILDE     &kp EXCL      &kp AT        &kp HASH      &trans            &trans        &kp LBKT      &kp RBKT      &kp GRAVE     &trans        &trans
+      &trans        &kp EXCL      &kp AT        &kp HASH      &kp AMPS      &trans            &trans        &kp LBKT      &kp RBKT      &kp GRAVE     &kp TILDE     &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &trans        &kp PRCNT     &kp PLUS      &kp MINUS     &kp EQUAL     &trans            &trans        &kp LPAR      &kp RPAR      &kp SQT       &kp PIPE      &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &kp CARET     &kp CARET     &kp UNDER     &kp DLLR      &trans            &trans        &kp LBRC      &kp RBRC      &kp DQT       &kp BSLH      &trans
+      &trans        &kp CARET     &kp ASTRK     &kp UNDER     &kp DLLR      &trans            &trans        &kp LBRC      &kp RBRC      &kp DQT       &kp BSLH      &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &trans        &trans        &kp LGUI          &none         &none         &none
+                                                &trans        &trans        &trans            &none         &none         &none
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
