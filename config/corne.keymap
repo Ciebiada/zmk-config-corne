@@ -45,8 +45,8 @@
                 MORPH(E_UP, MOD_LALT, &kp E, &kp UP)
                 MORPH(V_DOWN, MOD_LALT, &kp V, &kp DOWN)
 
-                MORPH(G_VOL_UP, MOD_LALT, &kp G, &kp C_VOL_UP)
-                MORPH(B_VOL_DN, MOD_LALT, &kp B, &kp C_VOL_DN)
+                MORPH(G_VOL_UP, MOD_LALT, &kp G, &kp C_VOLUME_UP)
+                MORPH(B_VOL_DN, MOD_LALT, &kp B, &kp C_VOLUME_DOWN)
 
                 MORPH(M_N1, MOD_RGUI, &kp M, &kp N1)
                 MORPH(COMMA_N2, MOD_RGUI, &kp COMMA, &kp N2)
@@ -80,9 +80,9 @@
                 symbol_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &kp C_VOL_UP        &kp EXCL      &kp AT        &kp HASH      &kp AMPS      &trans            &trans        &kp LBKT      &kp RBKT      &kp DQT       &kp TILDE     &trans
+      &trans        &kp EXCL      &kp AT        &kp HASH      &kp AMPS      &trans            &trans        &kp LBKT      &kp RBKT      &kp DQT       &kp TILDE     &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &kp C_VOL_DN        &kp PRCNT     &kp PLUS      &kp MINUS     &kp EQUAL     &trans            &trans        &kp LPAR      &kp RPAR      &kp SQT       &kp PIPE      &trans
+      &trans        &kp PRCNT     &kp PLUS      &kp MINUS     &kp EQUAL     &trans            &trans        &kp LPAR      &kp RPAR      &kp SQT       &kp PIPE      &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &trans        &kp CARET     &kp ASTRK     &kp UNDER     &kp DLLR      &trans            &trans        &kp LBRC      &kp RBRC      &kp GRAVE     &kp BSLH      &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
