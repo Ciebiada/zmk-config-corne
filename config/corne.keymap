@@ -60,14 +60,14 @@
 
         combos {
                 compatible = "zmk,combos";
+
                 combo_vol_up {
                         timeout-ms = <1000>;
                         key-positions = <18 37>;
                         bindings = <&kp C_VOL_UP>;
                 };
 
-                compatible = "zmk,combos";
-                combo_vol_up {
+                combo_vol_down {
                         timeout-ms = <1000>;
                         key-positions = <30 37>;
                         bindings = <&kp C_VOL_DN>;
