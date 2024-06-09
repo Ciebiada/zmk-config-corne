@@ -80,9 +80,9 @@
                 symbol_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &trans        &kp EXCL      &kp AT        &kp HASH      &kp AMPS      &trans            &trans        &kp LBKT      &kp RBKT      &kp DQT       &kp TILDE     &trans
+      &kp C_VOL_UP        &kp EXCL      &kp AT        &kp HASH      &kp AMPS      &trans            &trans        &kp LBKT      &kp RBKT      &kp DQT       &kp TILDE     &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &kp PRCNT     &kp PLUS      &kp MINUS     &kp EQUAL     &trans            &trans        &kp LPAR      &kp RPAR      &kp SQT       &kp PIPE      &trans
+      &kp C_VOL_DN        &kp PRCNT     &kp PLUS      &kp MINUS     &kp EQUAL     &trans            &trans        &kp LPAR      &kp RPAR      &kp SQT       &kp PIPE      &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &trans        &kp CARET     &kp ASTRK     &kp UNDER     &kp DLLR      &trans            &trans        &kp LBRC      &kp RBRC      &kp GRAVE     &kp BSLH      &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
