@@ -45,6 +45,7 @@
                 MORPH(E_UP, MOD_LALT, &kp E, &kp UP)
                 MORPH(V_DOWN, MOD_LALT, &kp V, &kp DOWN)
 
+                MORPH(H_N0, MOD_RGUI, &kp H, &kp N0)
                 MORPH(M_N1, MOD_RGUI, &kp M, &kp N1)
                 MORPH(COMMA_N2, MOD_RGUI, &kp COMMA, &kp N2)
                 MORPH(DOT_N3, MOD_RGUI, &kp DOT, &kp N3)
@@ -54,7 +55,6 @@
                 MORPH(U_N7, MOD_RGUI, &kp U, &kp N7)
                 MORPH(I_N8, MOD_RGUI, &kp I, &kp N8)
                 MORPH(O_N9, MOD_RGUI, &kp O, &kp N9)
-                MORPH(SEMI_N0, MOD_RGUI, &kp SEMI, &kp N0)
         };
 
         keymap {
@@ -65,7 +65,7 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       &kp TAB       &kp Q         &kp W         &E_UP         &kp R         &kp T             &kp Y         &U_N7         &I_N8         &O_N9         &kp P         &kp BSPC
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &mt LCTRL ESC &kp A         &kp S         &D_LEFT       &F_RIGHT      &kp G             &kp H         &J_N4         &K_N5         &L_N6         &SEMI_N0      &kp RET
+      &mt LCTRL ESC &kp A         &kp S         &D_LEFT       &F_RIGHT      &kp G             &kp H_N0      &J_N4         &K_N5         &L_N6         &kp SEMI      &kp RET
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &kp LSHFT     &kp Z         &kp X         &kp C         &V_DOWN       &kp B             &kp N         &M_N1         &COMMA_N2     &DOT_N3       &kp FSLH      &kp RSHFT
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
