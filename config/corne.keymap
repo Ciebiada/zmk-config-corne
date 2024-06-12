@@ -45,7 +45,7 @@
                                 = <&macro_param_1to1>
                                 , <&macro_tap &kp MACRO_PLACEHOLDER>
                                 ;
-                }
+                };
         };
 
         behaviors {
