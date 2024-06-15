@@ -97,11 +97,11 @@
                 navigation_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &ctab         &trans        &kp LAG(W)    &kp UP        &trans        &trans            &kp LAG(Y)    &kp LAG(U)    &kp LAG(I)    &kp LAG(O)    &kp LAG(P)    &trans
+      &ctab         &trans        &kp LA(LG(W)) &kp UP        &trans        &trans            &kp LA(LG(Y)) &kp LA(LG(U)) &kp LA(LG(I)) &kp LA(LG(O)) &kp LA(LG(P))    &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &trans        &trans        &kp LEFT      &kp RIGHT     &kp C_VOL_UP      &kp LAG(H)    &kp LAG(J)    &kp LAG(K)    &kp LAG(L)    &kp LAG(SEMI) &trans
+      &trans        &trans        &trans        &kp LEFT      &kp RIGHT     &kp C_VOL_UP      &kp LA(LG(H)) &kp LA(LG(J)) &kp LA(LG(K)) &kp LA(LG(L)) &kp LA(LG(SEMI)) &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &trans        &trans        &trans        &kp DOWN      &kp C_VOL_DN      &kp LAG(N)    &kp LAG(M)    &kp LAG(COMMA) &kp LAG(DOT) &kp LAG(FSLH) &trans
+      &trans        &trans        &trans        &trans        &kp DOWN      &kp C_VOL_DN      &kp LA(LG(N)) &kp LA(LG(M)) &kp LA(LG(COMMA)) &kp LA(LG(DOT)) &kp LA(LG(FSLH)) &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
                                                 &trans        &trans        &trans            &kp LA(RGUI)  &lm SYM LALT  &trans
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
