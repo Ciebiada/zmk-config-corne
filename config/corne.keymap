@@ -99,9 +99,9 @@
                 navigation_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &ctab         &trans        &kp LA(LG(W)) &kp UP        &trans        &trans            &kp LA(LG(Y)) &kp LA(LG(U)) &kp LA(LG(I)) &kp LA(LG(O)) &kp LA(LG(P))    &LA(BSPC)
+      &ctab         &trans        &kp LA(LG(W)) &kp UP        &trans        &trans            &kp LA(LG(Y)) &kp LA(LG(U)) &kp LA(LG(I)) &kp LA(LG(O)) &kp LA(LG(P))    &kp LA(BSPC)
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &trans        &trans        &kp LEFT      &kp RIGHT     &kp C_VOL_UP      &kp LA(LG(H)) &kp LA(LG(J)) &kp LA(LG(K)) &kp LA(LG(L)) &kp LA(LG(SEMI)) &LA(RET)
+      &trans        &trans        &trans        &kp LEFT      &kp RIGHT     &kp C_VOL_UP      &kp LA(LG(H)) &kp LA(LG(J)) &kp LA(LG(K)) &kp LA(LG(L)) &kp LA(LG(SEMI)) &kp LA(RET)
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &trans        &trans        &trans        &trans        &kp DOWN      &kp C_VOL_DN      &kp LA(LG(N)) &kp LA(LG(M)) &kp LA(LG(COMMA)) &kp LA(LG(DOT)) &kp LA(LG(FSLH)) &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
