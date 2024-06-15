@@ -65,11 +65,6 @@
         };
 
         behaviors {
-                MORPH(D_LEFT, MOD_LALT, &kp D, &kp LEFT)
-                MORPH(F_RIGHT, MOD_LALT, &kp F, &kp RIGHT)
-                MORPH(E_UP, MOD_LALT, &kp E, &kp UP)
-                MORPH(V_DOWN, MOD_LALT, &kp V, &kp DOWN)
-
                 MORPH(M_N1, MOD_RGUI, &kp M, &kp N1)
                 MORPH(COMMA_N2, MOD_RGUI, &kp COMMA, &kp N2)
                 MORPH(DOT_N3, MOD_RGUI, &kp DOT, &kp N3)
@@ -88,11 +83,11 @@
                 default_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &kp TAB       &kp Q         &kp W         &E_UP         &kp R         &kp T             &kp Y         &U_N7         &I_N8         &O_N9         &kp P         &kp BSPC
+      &kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &U_N7         &I_N8         &O_N9         &kp P         &kp BSPC
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &mt LCTRL ESC &kp A         &kp S         &D_LEFT       &F_RIGHT      &kp G             &kp H         &J_N4         &K_N5         &L_N6         &SEMI_N0      &kp RET
+      &mt LCTRL ESC &kp A         &kp S         &kp D         &kp F         &kp G             &kp H         &J_N4         &K_N5         &L_N6         &SEMI_N0      &kp RET
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &kp LSHFT     &kp Z         &kp X         &kp C         &V_DOWN       &kp B             &kp N         &M_N1         &COMMA_N2     &DOT_N3       &kp FSLH      &kp RSHFT
+      &kp LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &M_N1         &COMMA_N2     &DOT_N3       &kp FSLH      &kp RSHFT
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
                                                 &cnav         &kp SPACE     &kp LGUI          &kp RGUI      &mo SYM       &kp RALT
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
@@ -102,13 +97,13 @@
                 navigation_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &ctab         &trans        &trans        &kp UP        &trans        &trans            &trans        &trans        &trans        &trans        &trans        &trans
+      &ctab         &trans        &kp LAG(W)    &kp UP        &trans        &trans            &kp LAG(Y)    &kp LAG(U)    &kp LAG(I)    &kp LAG(O)    &kp LAG(P)    &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &trans        &trans        &kp LEFT      &kp RIGHT     &trans            &trans        &trans        &trans        &trans        &trans        &trans
+      &trans        &trans        &trans        &kp LEFT      &kp RIGHT     &kp C_VOL_UP      &kp LAG(H)    &kp LAG(J)    &kp LAG(K)    &kp LAG(L)    &kp LAG(SEMI) &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &trans        &trans        &trans        &kp DOWN      &trans            &trans        &trans        &trans        &trans        &trans        &trans
+      &trans        &trans        &trans        &trans        &kp DOWN      &kp C_VOL_DN      &kp LAG(N)    &kp LAG(M)    &kp LAG(COMMA) &kp LAG(DOT) &kp LAG(FSLH) &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &trans        &trans        &trans            &none         &none         &none
+                                                &trans        &trans        &trans            &kp LA(RGUI)  &lm SYM LALT  &trans
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                         >;
                 };
@@ -116,9 +111,9 @@
                 symbol_layer {
                         bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &trans        &kp EXCL      &kp AT        &kp HASH      &kp AMPS      &trans            &kp C_VOL_UP  &kp LBKT      &kp RBKT      &kp DQT       &kp TILDE     &trans
+      &trans        &kp EXCL      &kp AT        &kp HASH      &kp AMPS      &trans            &trans        &kp LBKT      &kp RBKT      &kp DQT       &kp TILDE     &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &kp PRCNT     &kp PLUS      &kp MINUS     &kp EQUAL     &trans            &kp C_VOL_DN  &kp LPAR      &kp RPAR      &kp SQT       &kp PIPE      &trans
+      &trans        &kp PRCNT     &kp PLUS      &kp MINUS     &kp EQUAL     &trans            &trans        &kp LPAR      &kp RPAR      &kp SQT       &kp PIPE      &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &trans        &kp CARET     &kp ASTRK     &kp UNDER     &kp DLLR      &trans            &trans        &kp LBRC      &kp RBRC      &kp GRAVE     &kp BSLH      &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
