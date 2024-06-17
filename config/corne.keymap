@@ -82,19 +82,17 @@
                 };
         };
 
-        behaviors {
-                MORPH(M_N1, MOD_RGUI, &kp M, &kp N1)
-                MORPH(COMMA_N2, MOD_RGUI, &kp COMMA, &kp N2)
-                MORPH(DOT_N3, MOD_RGUI, &kp DOT, &kp N3)
-                MORPH(J_N4, MOD_RGUI, &kp J, &kp N4)
-                MORPH(K_N5, MOD_RGUI, &kp K, &kp N5)
-                MORPH(L_N6, MOD_RGUI, &kp L, &kp N6)
-                MORPH(SEMI_N0, MOD_RGUI, &kp SEMI, &kp N0)
-                MORPH(U_N7, MOD_RGUI, &kp U, &kp N7)
-                MORPH(I_N8, MOD_RGUI, &kp I, &kp N8)
-                MORPH(O_N9, MOD_RGUI, &kp O, &kp N9)
-        };
+      /*
 
+      The idea is that outher thumb keys behave like ALTs.
+      - The left one is used for one hand stuff on the left side
+        - It also triggers ALT + GUI on the right side to distinguish between just ALT
+          if there are problems with this it can be meh or hyper as well
+      - The right one is just ALT
+      - Both use this complicated macro just in order to trigger ctrl + tab.
+        This could be simplified if there is a feature for this in the future.
+
+      */
         keymap {
                 compatible = "zmk,keymap";
 
@@ -131,9 +129,9 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       &trans        &kp EXCL      &kp AT        &kp HASH      &kp AMPS      &trans            &trans        &kp LBKT      &kp RBKT      &kp DQT       &kp TILDE     &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &kp PRCNT     &kp PLUS      &kp MINUS     &kp EQUAL     &trans            &trans        &kp LPAR      &kp RPAR      &kp SQT       &kp PIPE      &trans
+      &trans        &kp PRCNT     &kp PLUS      &kp MINUS     &kp EQUAL     &trans            &kp C_VOL_UP  &kp LPAR      &kp RPAR      &kp SQT       &kp PIPE      &trans
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &trans        &kp CARET     &kp ASTRK     &kp UNDER     &kp DLLR      &trans            &trans        &kp LBRC      &kp RBRC      &kp GRAVE     &kp BSLH      &trans
+      &trans        &kp CARET     &kp ASTRK     &kp UNDER     &kp DLLR      &trans            &kp C_VOL_DN  &kp LBRC      &kp RBRC      &kp GRAVE     &kp BSLH      &trans
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
                                                 &kp LALT      &trans        &trans            &none         &none         &none
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
