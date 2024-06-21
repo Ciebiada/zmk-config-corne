@@ -42,8 +42,8 @@
                     compatible = "zmk,behavior-mod-morph";
                     #binding-cells = <0>;
                     bindings = <&F_LAG>, <&kp TAB>;
-                    mods = <(MOD_LCTL)>;
-                    keep-mods = <(MOD_LCTL)>;
+                    mods = <(MOD_LCTL|MOD_LGUI)>;
+                    keep-mods = <(MOD_LCTL|MOD_LGUI)>;
             };
       };
 
