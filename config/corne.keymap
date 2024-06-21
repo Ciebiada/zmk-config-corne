@@ -38,13 +38,13 @@
             MORPH(I_UP, MOD_RALT, &I_LAG, &kp UP)
             MORPH(M_DOWN, MOD_RALT, &M_LAG, &kp DOWN)
 
-            F_TAB: F_TAB {
-                  compatible = "zmk,behavior-mod-morph";
-                  #binding-cells = <0>;
-                  bindings = <&F_LAG>, <&kp TAB>;
-                  mods = <(MOD_LCTRL)>;
-                  keep-mods = <(MOD_LCTRL)>;
-            };
+            // F_TAB: F_TAB {
+            //       compatible = "zmk,behavior-mod-morph";
+            //       #binding-cells = <0>;
+            //       bindings = <&F_LAG>, <&kp TAB>;
+            //       mods = <(MOD_LCTRL)>;
+            //       keep-mods = <(MOD_LCTRL)>;
+            // };
       };
 
       keymap {
@@ -55,9 +55,9 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       &kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &I_UP         &kp O         &kp P         &kp BSPC
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &mt LCTRL ESC &A_LAG        &S_LAG        &D_LAG        &F_TAB        &kp G             &kp H         &J_LEFT       &K_RIGHT      &kp L         &kp SEMI      &kp RET
+      &mt LCTRL ESC &A_LAG        &S_LAG        &D_LAG        &F_LAG        &kp G             &kp H         &J_LEFT       &K_RIGHT      &kp L         &kp SEMI      &kp RET
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &kp LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &M_DOWN       &kp COMMA     &kp DOT       &kp FSLH      &kp RSHFT
+      &kp LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &M_DOWN       &COMMA_LAG    &DOT_LAG      &kp FSLH      &kp RSHFT
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
                                                 &kp LALT      &kp SPACE     &kp LGUI          &mo NUM       &mo SYM       &kp RALT
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
