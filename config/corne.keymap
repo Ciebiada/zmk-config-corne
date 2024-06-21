@@ -26,11 +26,25 @@
             MORPH(K_LAG, MOD_LALT, &kp K, &kp LA(LG(K)))
             MORPH(I_LAG, MOD_LALT, &kp I, &kp LA(LG(I)))
             MORPH(M_LAG, MOD_LALT, &kp M, &kp LA(LG(M)))
+            MORPH(COMMA_LAG, MOD_LALT, &kp COMMA, &kp LA(LG(COMMA)))
+            MORPH(DOT_LAG, MOD_LALT, &kp DOT, &kp LA(LG(DOT)))
+            MORPH(A_LAG, MOD_LALT, &kp A, &kp LA(LG(A)))
+            MORPH(S_LAG, MOD_LALT, &kp S, &kp LA(LG(S)))
+            MORPH(D_LAG, MOD_LALT, &kp D, &kp LA(LG(D)))
+            MORPH(F_LAG, MOD_LALT, &kp F, &kp LA(LG(F)))
 
             MORPH(J_LEFT, MOD_RALT, &J_LAG, &kp LEFT)
             MORPH(K_RIGHT, MOD_RALT, &K_LAG, &kp RIGHT)
             MORPH(I_UP, MOD_RALT, &I_LAG, &kp UP)
             MORPH(M_DOWN, MOD_RALT, &M_LAG, &kp DOWN)
+
+            F_TAB: F_TAB {
+                  compatible = "zmk,behavior-mod-morph";
+                  #binding-cells = <0>;
+                  bindings = <&F_LAG>, <&kp TAB>;
+                  mods = <(MOD_LCTRL)>;
+                  keep-mods = <(MOD_LCTRL)>;
+            };
       };
 
       keymap {
@@ -41,7 +55,7 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       &kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &I_UP         &kp O         &kp P         &kp BSPC
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &mt LCTRL ESC &kp A         &kp S         &kp D         &kp F         &kp G             &kp H         &J_LEFT       &K_RIGHT      &kp L         &kp SEMI      &kp RET
+      &mt LCTRL ESC &A_LAG        &S_LAG        &D_LAG        &F_TAB        &kp G             &kp H         &J_LEFT       &K_RIGHT      &kp L         &kp SEMI      &kp RET
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &kp LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &M_DOWN       &kp COMMA     &kp DOT       &kp FSLH      &kp RSHFT
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
