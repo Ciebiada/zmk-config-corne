@@ -33,12 +33,18 @@
             MORPH(D_LAG, MOD_LALT, &kp D, &kp LA(LG(D)))
             MORPH(F_LAG, MOD_LALT, &kp F, &kp LA(LG(F)))
 
-            MORPH(F_TAB, MOD_LCTL, &F_LAG, &kp LC(TAB))
-
             MORPH(J_LEFT, MOD_RALT, &J_LAG, &kp LEFT)
             MORPH(K_RIGHT, MOD_RALT, &K_LAG, &kp RIGHT)
             MORPH(I_UP, MOD_RALT, &I_LAG, &kp UP)
             MORPH(M_DOWN, MOD_RALT, &M_LAG, &kp DOWN)
+
+            F_TAB: F_TAB {
+                    compatible = "zmk,behavior-mod-morph";
+                    #binding-cells = <0>;
+                    bindings = <&F_LAG>, <&kp TAB>;
+                    mods = <(MOD_LCTL)>;
+                    keep-mods = <(MOD_LCTL)>;
+            };
       };
 
       keymap {
