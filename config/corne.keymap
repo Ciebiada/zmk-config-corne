@@ -32,7 +32,8 @@
             MORPH(S_LAG, MOD_LALT, &kp S, &kp LA(LG(S)))
             MORPH(D_LAG, MOD_LALT, &kp D, &kp LA(LG(D)))
             MORPH(F_LAG, MOD_LALT, &kp F, &kp LA(LG(F)))
-            MORPH(F_TAB, MOD_LCTRL, &F_LAG, &kp LC(TAB))
+
+            MORPH(F_TAB, MOD_LCTL, &F_LAG, &kp LC(TAB))
 
             MORPH(J_LEFT, MOD_RALT, &J_LAG, &kp LEFT)
             MORPH(K_RIGHT, MOD_RALT, &K_LAG, &kp RIGHT)
