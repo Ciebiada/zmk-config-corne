@@ -28,10 +28,19 @@
             MORPH(M_LAG, MOD_LALT, &kp M, &kp LA(LG(M)))
             MORPH(COMMA_LAG, MOD_LALT, &kp COMMA, &kp LA(LG(COMMA)))
             MORPH(DOT_LAG, MOD_LALT, &kp DOT, &kp LA(LG(DOT)))
+
+            MORPH(Q_LAG, MOD_LALT, &kp Q, &kp LA(LG(Q)))
+            MORPH(W_LAG, MOD_LALT, &kp W, &kp LA(LG(W)))
+            MORPH(E_LAG, MOD_LALT, &kp E, &kp LA(LG(E)))
+            MORPH(R_LAG, MOD_LALT, &kp R, &kp LA(LG(R)))
             MORPH(A_LAG, MOD_LALT, &kp A, &kp LA(LG(A)))
             MORPH(S_LAG, MOD_LALT, &kp S, &kp LA(LG(S)))
             MORPH(D_LAG, MOD_LALT, &kp D, &kp LA(LG(D)))
             MORPH(F_LAG, MOD_LALT, &kp F, &kp LA(LG(F)))
+            MORPH(Z_LAG, MOD_LALT, &kp Z, &kp LA(LG(Z)))
+            MORPH(X_LAG, MOD_LALT, &kp X, &kp LA(LG(X)))
+            MORPH(C_LAG, MOD_LALT, &kp C, &kp LA(LG(C)))
+            MORPH(V_LAG, MOD_LALT, &kp V, &kp LA(LG(V)))
 
             MORPH(J_LEFT, MOD_RALT, &J_LAG, &kp LEFT)
             MORPH(K_RIGHT, MOD_RALT, &K_LAG, &kp RIGHT)
@@ -53,11 +62,11 @@
             default_layer {
                   bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &I_UP         &kp O         &kp P         &kp BSPC
+      &kp TAB       &Q_LAG        &W_LAG        &E_LAG        &R_LAG        &kp T             &kp Y         &kp U         &I_UP         &kp O         &kp P         &kp BSPC
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &mt LCTRL ESC &A_LAG        &S_LAG        &D_LAG        &F_TAB        &kp G             &kp H         &J_LEFT       &K_RIGHT      &kp L         &kp SEMI      &kp RET
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &kp LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &M_DOWN       &COMMA_LAG    &DOT_LAG      &kp FSLH      &kp RSHFT
+      &kp LSHFT     &Z_LAG        &X_LAG        &C_LAG        &V_LAG        &kp B             &kp N         &M_DOWN       &COMMA_LAG    &DOT_LAG      &kp FSLH      &kp RSHFT
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
                                                 &kp LALT      &kp SPACE     &kp LGUI          &mo NUM       &mo SYM       &kp RALT
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
