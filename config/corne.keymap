@@ -23,35 +23,13 @@
 / {
       behaviors {
             MORPH(ABSPC, MOD_LCTL, &kp BSPC, &kp LA(BSPC))
-            MORPH(ALEFT, MOD_LCTL, &kp LEFT, &kp LA(LEFT))
-            MORPH(ARIGHT, MOD_LCTL, &kp RIGHT, &kp LA(RIGHT))
-            MORPH(AUP, MOD_LCTL, &kp UP, &kp LA(UP))
-            MORPH(ADOWN, MOD_LCTL, &kp DOWN, &kp LA(DOWN))
 
-            // MORPH(J_LAG, MOD_LALT, &kp J, &kp LA(LG(J)))
-            // MORPH(K_LAG, MOD_LALT, &kp K, &kp LA(LG(K)))
-            // MORPH(I_LAG, MOD_LALT, &kp I, &kp LA(LG(I)))
-            // MORPH(M_LAG, MOD_LALT, &kp M, &kp LA(LG(M)))
-            // MORPH(COMMA_LAG, MOD_LALT, &kp COMMA, &kp LA(LG(COMMA)))
-            // MORPH(DOT_LAG, MOD_LALT, &kp DOT, &kp LA(LG(DOT)))
+            MORPH(H_LEFT, MOD_LCTL, &kp H, &kp LEFT)
+            MORPH(J_UP, MOD_LCTL, &kp J, &kp UP)
+            MORPH(K_DOWN, MOD_LCTL, &kp K, &kp DOWN)
+            MORPH(L_RIGHT, MOD_LCTL, &kp L, &kp RIGHT)
 
-            // MORPH(Q_LAG, MOD_LALT, &kp Q, &kp LA(LG(Q)))
-            // MORPH(W_LAG, MOD_LALT, &kp W, &kp LA(LG(W)))
-            // MORPH(E_LAG, MOD_LALT, &kp E, &kp LA(LG(E)))
-            // MORPH(R_LAG, MOD_LALT, &kp R, &kp LA(LG(R)))
-            // MORPH(A_LAG, MOD_LALT, &kp A, &kp LA(LG(A)))
-            // MORPH(S_LAG, MOD_LALT, &kp S, &kp LA(LG(S)))
-            // MORPH(D_LAG, MOD_LALT, &kp D, &kp LA(LG(D)))
-            // MORPH(F_LAG, MOD_LALT, &kp F, &kp LA(LG(F)))
-            // MORPH(Z_LAG, MOD_LALT, &kp Z, &kp LA(LG(Z)))
-            // MORPH(X_LAG, MOD_LALT, &kp X, &kp LA(LG(X)))
-            // MORPH(C_LAG, MOD_LALT, &kp C, &kp LA(LG(C)))
-            // MORPH(V_LAG, MOD_LALT, &kp V, &kp LA(LG(V)))
-
-            MORPH(J_LEFT, MOD_RALT, &kp J, &ALEFT)
-            MORPH(K_RIGHT, MOD_RALT, &kp K, &ARIGHT)
-            MORPH(I_UP, MOD_RALT, &kp I, &AUP)
-            MORPH(M_DOWN, MOD_RALT, &kp M, &ADOWN)
+            MORPH(SYM_NUM, MOD_LCTL, &mo SYM, &mo NUM)
       };
 
       keymap {
@@ -62,11 +40,11 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       &none         &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &I_UP         &kp O         &kp P         &none
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &none         &kp A         &kp S         &kp D         &kp F         &kp G             &kp H         &J_LEFT       &K_RIGHT      &kp L         &ABSPC        &none
+      &none         &kp A         &kp S         &kp D         &kp F         &kp G             &H_LEFT       &J_UP         &K_DOWN       &L_RIGHT      &ABSPC        &none
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &none         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &M_DOWN       &kp COMMA     &kp DOT       &mt RSHFT RET &none
+      &none         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &mt RSHFT RET &none
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &mt LCTRL ESC &kp SPACE     &kp LGUI          &mt RSHFT TAB &mo SYM       &kp RALT
+                                                &mt LCTRL ESC &kp SPACE     &kp LGUI          &mt RSHFT TAB &SYM_NUM      &kp RALT
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                   >;
             };
