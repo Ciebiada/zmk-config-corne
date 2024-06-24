@@ -24,9 +24,11 @@
       behaviors {
             MORPH(ABSPC, MOD_LCTL, &kp BSPC, &kp LA(BSPC))
 
-            MORPH(H_LEFT, MOD_LCTL, &kp H, &kp LEFT)
-            MORPH(J_UP, MOD_LCTL, &kp J, &kp UP)
-            MORPH(K_DOWN, MOD_LCTL, &kp K, &kp DOWN)
+            MORPH(HSPACE, MOD_LGUI, &kp H, &kp LG(SPACE))
+
+            MORPH(H_LEFT, MOD_LCTL, &HSPACE, &kp LEFT)
+            MORPH(J_DOWN, MOD_LCTL, &kp J, &kp DOWN)
+            MORPH(K_UP, MOD_LCTL, &kp K, &kp UP)
             MORPH(L_RIGHT, MOD_LCTL, &kp L, &kp RIGHT)
 
             MORPH(SYM_NUM, MOD_LCTL, &mo SYM, &mo NUM)
@@ -40,11 +42,11 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       &none         &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &none
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &none         &kp A         &kp S         &kp D         &kp F         &kp G             &H_LEFT       &J_UP         &K_DOWN       &L_RIGHT      &ABSPC        &none
+      &none         &kp A         &kp S         &kp D         &kp F         &kp G             &H_LEFT       &J_DOWN       &K_UP         &L_RIGHT      &ABSPC        &none
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &none         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &mt RSHFT RET &none
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &mt LCTRL ESC &kp SPACE     &kp LGUI          &mt RSHFT TAB &SYM_NUM      &kp RALT
+                                                &mt LCTRL ESC &kp SPACE     &kp LGUI          &mt RSHFT TAB &SYM_NUM      &kp LALT
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                   >;
             };
