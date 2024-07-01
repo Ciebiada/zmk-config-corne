@@ -9,8 +9,9 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEFAULT 0
-#define SYM 1
-#define NUM 2
+#define NAV 1
+#define SYM 2
+#define NUM 3
 
 #define MORPH(NAME, MOD, BINDING1, BINDING2) \
       NAME: NAME { \
@@ -21,19 +22,6 @@
       };
 
 / {
-      behaviors {
-            MORPH(ABSPC, MOD_LCTL, &kp BSPC, &kp LA(BSPC))
-
-            MORPH(HSPACE, MOD_LGUI, &kp H, &kp LG(SPACE))
-
-            MORPH(H_LEFT, MOD_LCTL, &HSPACE, &kp LEFT)
-            MORPH(J_DOWN, MOD_LCTL, &kp J, &kp DOWN)
-            MORPH(K_UP, MOD_LCTL, &kp K, &kp UP)
-            MORPH(L_RIGHT, MOD_LCTL, &kp L, &kp RIGHT)
-
-            MORPH(SYM_NUM, MOD_LCTL, &mo SYM, &mo NUM)
-      };
-
       keymap {
             compatible = "zmk,keymap";
 
@@ -42,11 +30,25 @@
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
       &none         &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &none
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &none         &kp A         &kp S         &kp D         &kp F         &kp G             &H_LEFT       &J_DOWN       &K_UP         &L_RIGHT      &ABSPC        &none
+      &none         &kp A         &kp S         &kp D         &kp F         &kp G             &kp H         &kp J         &kp K         &kp L         &kp SEMI      &none
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &none         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &mt RSHFT RET &none
+      &none         &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &none
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &mt LCTRL ESC &kp SPACE     &kp LGUI          &mt RSHFT TAB &SYM_NUM      &kp LALT
+                                                &kp LCTRL     &lt NAV ESC   &kp SPACE         &kp LSHFT     &mo SYM       &kp RALT
+//                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+                  >;
+            };
+
+            navigation_layer {
+                  bindings = <
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+      &none         &trans        &trans        &kp TAB       &trans        &trans            &trans        &trans        &trans        &trans        &trans        &none
+// ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
+      &none         &sk LSHFT     &sk LCTRL     &sk LALT      &sk LGUI      &kp C_VOL_UP      &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans        &none
+// ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
+      &none         &kp LG(Z)     &kp LG(X)     &kp LG(C)     &kp LG(V)     &kp C_VOL_DN      &trans        &kp BSPC      &kp TAB       &trans        &trans        &none
+// ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
+                                                &trans        &trans        &trans            &kp RET       &mo NUM       &trans
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                   >;
             };
@@ -54,13 +56,13 @@
             symbol_layer {
                   bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &none         &kp EXCL      &kp AT        &kp HASH      &kp AMPS      &kp FSLH          &kp BSLH      &kp LBKT      &kp RBKT      &kp DQT       &kp TILDE     &none
+      &none         &trans        &kp LBKT      &kp LBRC      &kp LPAR      &kp EXCL          &kp AT        &kp RPAR      &kp RBRC      &kp RBKT      &trans        &none
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &none         &kp PRCNT     &kp PLUS      &kp MINUS     &kp EQUAL     &kp FSLH          &kp COLON     &kp LPAR      &kp RPAR      &kp SQT       &kp PIPE      &none
+      &none         &kp TILDE     &kp PLUS      &kp MINUS     &kp EQUAL     &kp HASH          &kp DLLR      &sk RGUI      &sk RALT      &sk RCTRL     &sk RSHFT     &none
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
-      &none         &kp CARET     &kp ASTRK     &kp UNDER     &kp DLLR      &kp BSLH          &kp SEMI      &kp LBRC      &kp RBRC      &kp GRAVE     &kp QMARK     &none
+      &none         &kp PIPE      &kp AMPS      &kp ASTRK     &kp UNDER     &kp PRCNT         &kp CARET     &kp SQT       &kp DQT       &kp GRAVE     &kp BSLH      &none
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &mo NUM       &trans        &none             &trans        &trans        &trans
+                                                &trans        &mo NUM       &trans            &trans        &trans        &trans
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                   >;
             };
@@ -74,7 +76,7 @@
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &none         &trans        &trans        &trans        &trans        &trans            &trans        &kp N1        &kp N2        &kp N3        &trans        &none
 // ╰─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╯
-                                                &trans        &trans        &none             &none         &trans        &trans
+                                                &trans        &trans        &trans            &trans        &trans        &trans
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
                   >;
             };
