@@ -31,6 +31,18 @@
                   flavor = "hold-preferred";
                   bindings = <&mo>, <&kp>;
             };
+            cmd_tab: cmd_tab {
+                  compatible = "zmk,behavior-smart-toggle";
+                  #binding-cells = <0>;
+                  bindings = <&kp LGUI>, <&kp TAB>;
+                  ignored-key-positions = <14, 40>;
+            };
+            ctrl_tab: ctrl_tab {
+                  compatible = "zmk,behavior-smart-toggle";
+                  #binding-cells = <0>;
+                  bindings = <&kp LCTRL>, <&kp TAB>;
+                  ignored-key-positions = <14, 40>;
+            };
       };
 
       keymap {
@@ -53,7 +65,7 @@
             navigation_layer {
                   bindings = <
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-      &none         &kp LC(N1)    &kp LC(N2)    &kp LC(N3)    &kp LC(N4)    &kp LC(N5)        &trans        &trans        &trans        &trans        &trans        &none
+      &none         &kp LC(N1)    &kp LC(N2)    &kp LC(N3)    &kp LC(N4)    &kp LC(N5)        &trans        &cmd_tab      &ctrl_tab     &trans        &trans        &none
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
       &none         &sk LSHFT     &sk LCTRL     &sk LALT      &sk LGUI      &kp RET           &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans        &none
 // ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤   ├─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────┤
