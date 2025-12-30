@@ -70,6 +70,12 @@
                 , <&macro_release &mo MACRO_PLACEHOLDER>
                 ;
         };
+
+        mo_hard: momentary_layer {
+            compatible = "zmk,behavior-momentary-layer";
+            #binding-cells = <1>;
+            display-name = "Hard MO";
+        };
     };
 
     keymap {
