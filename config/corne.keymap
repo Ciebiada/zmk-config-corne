@@ -71,12 +71,6 @@
                 ;
         };
 
-        mo_hard: momentary_layer {
-            compatible = "zmk,behavior-momentary-layer";
-            #binding-cells = <1>;
-            display-name = "Hard MO";
-        };
-
         mo_cut: mo_cut {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
